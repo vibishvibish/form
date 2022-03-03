@@ -1,0 +1,67 @@
+
+<html>
+<head>
+	<title>Save Web Form Data to Spreadsheets</title>
+    <link rel="stylesheet" href="css/style.css"> 
+	<script
+		src="https://code.jquery.com/jquery-3.4.1.js"
+		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+		crossorigin="anonymous"></script>
+	<script>
+		function SubForm (){
+			$.ajax({
+				url:"https://api.apispreadsheets.com/data/Zn7VUo0RJcUdWOaG/",
+				type:"post",
+				data:$("#myForm").serializeArray(),
+				success: function(){
+					alert("Form Data Submitted :)")
+				},
+				error: function(){
+					alert("There was an error :(")
+				}
+			});
+		}
+	</script>
+</head>
+<body>
+    <div class="one">
+        
+    </div>
+    <div class="first">
+        <h2>Form</h2>
+	<form id="myForm">
+		<label>First name</label><br>
+		<input name="First name" >
+		<br>
+		<label>Last name</label><br>
+		<input name="Last name" />
+		<br>
+        <label>dob</label><br>
+		<input type="date" />
+        <br>
+		<label>Age</label><br>
+		<input name="Age" />
+		<br>
+		<label>Gender</label><br>
+		<input name="Gender" />
+		<br>
+		<label>Email</label><br>
+		<input name="Email" />
+		<br>
+		<label>Education</label><br>
+		<input name="Education" />
+		<br>
+		<label>Prog language</label><br>
+		<input name="Prog language" />
+		<br>
+		<label>Comm language</label><br>
+		<input name="Comm language" />
+		<br>
+		<label>Phone no</label><br>
+		<input name="Phone no" />
+		<br>
+	</form>
+	<button onclick='SubForm()'>Submit</button>
+    </div>
+</body>
+</html>
